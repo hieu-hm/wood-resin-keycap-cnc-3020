@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220mm" height="160mm" viewBox="-40 -35 80 58">
+  <style>
+    .cut { fill: none; stroke: #111; stroke-width: 0.25; }
+    .pocket { fill: none; stroke: #0a6; stroke-width: 0.25; stroke-dasharray: 1 0.8; }
+    .stem { fill: #d33; fill-opacity: 0.18; stroke: #d33; stroke-width: 0.2; }
+    .text { font-family: Arial, sans-serif; font-size: 2.2px; fill: #111; }
+  </style>
+  <text x="-36" y="-30" class="text">Keycap 1u Cherry MX - wood body + resin insert, units mm</text>
+  <rect x="-9.1" y="-9.1" width="18.2" height="18.2" class="cut"/>
+  <rect x="-6.4" y="-6.4" width="12.8" height="12.8" class="pocket"/>
+  <rect x="-3.7" y="-3.7" width="7.4" height="7.4" class="pocket"/>
+  <text x="-9.1" y="13" class="text">Bottom 18.2 x 18.2</text>
+  <text x="-6.4" y="16" class="text">Top 12.8 x 12.8</text>
+  <text x="-3.7" y="19" class="text">Resin pocket 7.4 x 7.4</text>
+  <g transform="translate(24,0)">
+    <rect x="-2.1" y="-0.66" width="4.2" height="1.32" class="stem"/>
+    <rect x="-0.66" y="-2.1" width="1.32" height="4.2" class="stem"/>
+    <rect x="-3.55" y="-3.55" width="7.1" height="7.1" class="pocket"/>
+    <text x="-8" y="9" class="text">Cherry MX socket reference</text>
+    <text x="-8" y="12" class="text">slot 4.2 x 1.32, centered</text>
+  </g>
+  <g transform="translate(0,31)">
+    <path d="M -9.1 0 L -6.4 -9.6 L 6.4 -9.6 L 9.1 0 Z" class="cut"/>
+    <path d="M -7.85 -0.25 L -5.15 -7.95 L 5.15 -7.95 L 7.85 -0.25" class="pocket"/>
+    <text x="-9.1" y="5" class="text">Side profile: height 9.6, wall 1.25, top thickness 1.65</text>
+  </g>
+</svg>
