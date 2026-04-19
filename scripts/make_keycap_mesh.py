@@ -89,6 +89,8 @@ def make_wood_body():
     height = 9.6
     wall = 1.25
     top_thick = 1.65
+    resin_pocket_w = 7.4
+    resin_pocket_depth = 5.0
     bottom_z = 0.0
     inner_top_z = height - top_thick
 
@@ -114,11 +116,11 @@ def make_wood_body():
         add_quad(tris, inner_bottom[(i + 1) % 4], inner_bottom[i], inner_top[i], inner_top[(i + 1) % 4])
 
     # Underside ceiling around resin insert pocket.
-    pocket = rect_points(7.4, 7.4, inner_top_z)
+    pocket = rect_points(resin_pocket_w, resin_pocket_w, inner_top_z)
     add_ring_between_rects(tris, inner_top, pocket, reverse=True)
 
     # Pocket walls for resin insert to locate in wood.
-    pocket_bottom = rect_points(7.4, 7.4, inner_top_z - 2.2)
+    pocket_bottom = rect_points(resin_pocket_w, resin_pocket_w, inner_top_z - resin_pocket_depth)
     for i in range(4):
         add_quad(tris, pocket[i], pocket[(i + 1) % 4], pocket_bottom[(i + 1) % 4], pocket_bottom[i])
 
@@ -147,13 +149,17 @@ def box_tris(cx, cy, z0, sx, sy, sz):
 
 def make_resin_insert():
     tris = []
-    # Resin anchor plate sits in a square pocket under the top.
-    tris.extend(box_tris(0, 0, 5.75, 7.1, 7.1, 2.05))
+    resin_top_z = 7.95
+    resin_depth = 5.0
+    resin_bottom_z = resin_top_z - resin_depth
+
+    # Resin anchor block fills the square pour pocket under the top.
+    tris.extend(box_tris(0, 0, resin_bottom_z, 7.1, 7.1, resin_depth))
 
     # Material around the Cherry MX female cruciform socket.
     # The open socket is formed by leaving a cross-shaped void at the center.
-    z0 = 1.75
-    z1 = 5.90
+    z0 = resin_bottom_z
+    z1 = resin_top_z - 0.15
     h = z1 - z0
     outer = 6.0
     slot_len = 4.2
@@ -191,7 +197,7 @@ def write_svg_template():
   <rect x="-3.7" y="-3.7" width="7.4" height="7.4" class="pocket"/>
   <text x="-9.1" y="13" class="text">Bottom 18.2 x 18.2</text>
   <text x="-6.4" y="16" class="text">Top 12.8 x 12.8</text>
-  <text x="-3.7" y="19" class="text">Resin pocket 7.4 x 7.4</text>
+  <text x="-3.7" y="19" class="text">Resin pour pocket 7.4 x 7.4 x 5.0 deep</text>
   <g transform="translate(24,0)">
     <rect x="-2.1" y="-0.66" width="4.2" height="1.32" class="stem"/>
     <rect x="-0.66" y="-2.1" width="1.32" height="4.2" class="stem"/>
@@ -202,7 +208,8 @@ def write_svg_template():
   <g transform="translate(0,31)">
     <path d="M -9.1 0 L -6.4 -9.6 L 6.4 -9.6 L 9.1 0 Z" class="cut"/>
     <path d="M -7.85 -0.25 L -5.15 -7.95 L 5.15 -7.95 L 7.85 -0.25" class="pocket"/>
-    <text x="-9.1" y="5" class="text">Side profile: height 9.6, wall 1.25, top thickness 1.65</text>
+    <rect x="-3.7" y="-7.95" width="7.4" height="5.0" class="stem"/>
+    <text x="-9.1" y="5" class="text">Side profile: height 9.6, wall 1.25, resin pocket depth 5.0</text>
   </g>
 </svg>
 """
@@ -217,7 +224,7 @@ Units: millimeters.
 
 Generated files:
 - `keycap_1u_cherry_mx_wood_body.stl`: wooden outer keycap shell.
-- `keycap_1u_cherry_mx_resin_insert.stl`: resin insert with underside Cherry MX female socket.
+- `keycap_1u_cherry_mx_resin_insert.stl`: square resin insert/pour block with underside Cherry MX female socket.
 - `keycap_1u_cherry_mx_wood_resin_assembly.stl`: combined preview assembly.
 - `keycap_1u_cherry_mx_layout.svg`: 2D dimension reference for bottom/top/pocket/stem.
 
@@ -227,14 +234,14 @@ Nominal dimensions:
 - Height: 9.6 mm.
 - Wall thickness: 1.25 mm.
 - Top thickness: 1.65 mm.
-- Resin pocket: 7.4 x 7.4 x 2.2 mm under the top.
-- Cherry MX female socket: centered, about 4.2 x 1.32 mm each slot, depth about 4.15 mm.
+- Resin pour pocket: 7.4 x 7.4 x 5.0 mm under the top.
+- Cherry MX female socket: centered, about 4.2 x 1.32 mm each slot, depth about 5.0 mm available in resin.
 
 Manufacturing notes:
 - This is a practical starting model, not an official Cherry MX mechanical drawing.
 - For CNC wood, leave 0.15-0.30 mm extra clearance around the resin insert depending on wood movement and resin shrinkage.
 - Do a fit test before making a full set. Cherry-compatible switches and printers/CNC postprocessors vary.
-- For resin casting, machine/print the wood body first, seal the wood, cast resin into the 7.4 mm pocket, then finish-machine the Cherry MX socket in the resin if your casting process cannot hold that detail.
+- For resin casting, machine/print the wood body first, seal the wood, cast resin into the 7.4 x 7.4 x 5.0 mm square pocket, then finish-machine the Cherry MX socket in the resin if your casting process cannot hold that detail.
 - For a production STEP file, remodel this parametric design in Fusion 360/SolidWorks/FreeCAD from the dimensions above and then toolpath from STEP.
 """
     DOCS.mkdir(parents=True, exist_ok=True)

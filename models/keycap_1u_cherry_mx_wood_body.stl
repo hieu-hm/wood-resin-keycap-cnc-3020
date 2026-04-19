@@ -2187,56 +2187,56 @@ solid wood_body
     outer loop
       vertex -3.70000 -3.70000 7.95000
       vertex 3.70000 -3.70000 7.95000
-      vertex 3.70000 -3.70000 5.75000
+      vertex 3.70000 -3.70000 2.95000
     endloop
   endfacet
   facet normal 0.00000000 1.00000000 0.00000000
     outer loop
       vertex -3.70000 -3.70000 7.95000
-      vertex 3.70000 -3.70000 5.75000
-      vertex -3.70000 -3.70000 5.75000
+      vertex 3.70000 -3.70000 2.95000
+      vertex -3.70000 -3.70000 2.95000
     endloop
   endfacet
   facet normal -1.00000000 0.00000000 0.00000000
     outer loop
       vertex 3.70000 -3.70000 7.95000
       vertex 3.70000 3.70000 7.95000
-      vertex 3.70000 3.70000 5.75000
+      vertex 3.70000 3.70000 2.95000
     endloop
   endfacet
   facet normal -1.00000000 0.00000000 0.00000000
     outer loop
       vertex 3.70000 -3.70000 7.95000
-      vertex 3.70000 3.70000 5.75000
-      vertex 3.70000 -3.70000 5.75000
+      vertex 3.70000 3.70000 2.95000
+      vertex 3.70000 -3.70000 2.95000
     endloop
   endfacet
   facet normal -0.00000000 -1.00000000 0.00000000
     outer loop
       vertex 3.70000 3.70000 7.95000
       vertex -3.70000 3.70000 7.95000
-      vertex -3.70000 3.70000 5.75000
+      vertex -3.70000 3.70000 2.95000
     endloop
   endfacet
   facet normal 0.00000000 -1.00000000 -0.00000000
     outer loop
       vertex 3.70000 3.70000 7.95000
-      vertex -3.70000 3.70000 5.75000
-      vertex 3.70000 3.70000 5.75000
+      vertex -3.70000 3.70000 2.95000
+      vertex 3.70000 3.70000 2.95000
     endloop
   endfacet
   facet normal 1.00000000 0.00000000 0.00000000
     outer loop
       vertex -3.70000 3.70000 7.95000
       vertex -3.70000 -3.70000 7.95000
-      vertex -3.70000 -3.70000 5.75000
+      vertex -3.70000 -3.70000 2.95000
     endloop
   endfacet
   facet normal 1.00000000 0.00000000 0.00000000
     outer loop
       vertex -3.70000 3.70000 7.95000
-      vertex -3.70000 -3.70000 5.75000
-      vertex -3.70000 3.70000 5.75000
+      vertex -3.70000 -3.70000 2.95000
+      vertex -3.70000 3.70000 2.95000
     endloop
   endfacet
   facet normal 0.00000000 -0.19611614 0.98058068

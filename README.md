@@ -5,7 +5,7 @@ Project for a 1u Cherry MX compatible keycap with a CNC-machined wood body and a
 ## Files
 
 - `models/keycap_1u_cherry_mx_wood_body.stl` - wood body model for CAM.
-- `models/keycap_1u_cherry_mx_resin_insert.stl` - resin insert with underside Cherry MX female socket.
+- `models/keycap_1u_cherry_mx_resin_insert.stl` - square resin insert/pour block with underside Cherry MX female socket.
 - `models/keycap_1u_cherry_mx_wood_resin_assembly.stl` - combined preview assembly.
 - `drawings/keycap_1u_cherry_mx_layout.svg` - 2D dimension reference.
 - `cam/CNC_3020_PLUS_keycap_job_sheet.md` - machining notes for CNC 3020 Plus.
@@ -19,8 +19,8 @@ Project for a 1u Cherry MX compatible keycap with a CNC-machined wood body and a
 - Height: 9.6 mm.
 - Wall thickness: 1.25 mm.
 - Top thickness: 1.65 mm.
-- Resin pocket: 7.4 x 7.4 x 2.2 mm.
-- Cherry MX socket: about 4.2 x 1.32 mm slots, centered, about 4.15 mm deep.
+- Resin pour pocket: 7.4 x 7.4 x 5.0 mm.
+- Cherry MX socket: about 4.2 x 1.32 mm slots, centered, with about 5.0 mm resin depth available.
 
 ## Suggested Workflow
 
@@ -28,7 +28,7 @@ Project for a 1u Cherry MX compatible keycap with a CNC-machined wood body and a
 2. Set units to millimeters.
 3. Set origin at the keycap center, with Z zero on top of stock.
 4. Machine the wood body and resin pocket.
-5. Seal the wood, cast or install the resin insert.
+5. Seal the wood, cast resin into the 7.4 x 7.4 x 5.0 mm square pocket or install the matching resin insert.
 6. Machine/test the Cherry MX socket in resin.
 7. Test fit on one switch before making a full set.
 

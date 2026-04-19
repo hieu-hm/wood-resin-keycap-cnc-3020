@@ -11,7 +11,7 @@
   <rect x="-3.7" y="-3.7" width="7.4" height="7.4" class="pocket"/>
   <text x="-9.1" y="13" class="text">Bottom 18.2 x 18.2</text>
   <text x="-6.4" y="16" class="text">Top 12.8 x 12.8</text>
-  <text x="-3.7" y="19" class="text">Resin pocket 7.4 x 7.4</text>
+  <text x="-3.7" y="19" class="text">Resin pour pocket 7.4 x 7.4 x 5.0 deep</text>
   <g transform="translate(24,0)">
     <rect x="-2.1" y="-0.66" width="4.2" height="1.32" class="stem"/>
     <rect x="-0.66" y="-2.1" width="1.32" height="4.2" class="stem"/>
@@ -22,6 +22,7 @@
   <g transform="translate(0,31)">
     <path d="M -9.1 0 L -6.4 -9.6 L 6.4 -9.6 L 9.1 0 Z" class="cut"/>
     <path d="M -7.85 -0.25 L -5.15 -7.95 L 5.15 -7.95 L 7.85 -0.25" class="pocket"/>
-    <text x="-9.1" y="5" class="text">Side profile: height 9.6, wall 1.25, top thickness 1.65</text>
+    <rect x="-3.7" y="-7.95" width="7.4" height="5.0" class="stem"/>
+    <text x="-9.1" y="5" class="text">Side profile: height 9.6, wall 1.25, resin pocket depth 5.0</text>
   </g>
 </svg>

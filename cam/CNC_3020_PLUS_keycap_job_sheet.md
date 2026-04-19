@@ -71,8 +71,9 @@ Resin with 0.8-1.0 mm end mill:
 2. 3D rough the outside body from `keycap_1u_cherry_mx_wood_body.stl`.
 3. 3D finish the top surface.
 4. Machine the underside cavity and resin pocket.
-5. Leave 0.15-0.30 mm clearance for the resin insert/pour because wood and resin dimensions move.
-6. Cut the outer profile last, with tabs if not using strong double-sided tape.
+5. Machine the square resin pour pocket to about 7.4 x 7.4 x 5.0 mm.
+6. Leave 0.15-0.30 mm clearance for the resin insert/pour because wood and resin dimensions move.
+7. Cut the outer profile last, with tabs if not using strong double-sided tape.
 
 ### Resin stem/insert
 
@@ -80,7 +81,7 @@ Two practical options:
 
 Option A - cast resin into the wood pocket:
 - Seal the wood first.
-- Cast resin into the 7.4 x 7.4 mm pocket.
+- Cast resin into the 7.4 x 7.4 x 5.0 mm square pocket.
 - After curing, re-zero on the underside center and machine the Cherry MX female socket.
 
 Option B - machine/print separate insert:
@@ -92,7 +93,7 @@ Option B - machine/print separate insert:
 
 Before making a full set, cut only the resin socket test:
 - Slot pair: about 4.2 x 1.32 mm, centered.
-- Depth: about 4.15 mm.
+- Available resin depth: about 5.0 mm.
 - If switch is too tight, increase slot width by 0.05 mm.
 - If switch is loose, reduce slot width or use a tougher resin/epoxy mix.
 
