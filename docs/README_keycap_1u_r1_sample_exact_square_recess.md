@@ -14,4 +14,5 @@ Patch parameters used:
 Output files:
 - `keycap_1u_r1_sample_exact_square_recess.stl`
 - `keycap_1u_r1_sample_exact_square_recess_bottom.png`
+- `keycap_1u_r1_sample_exact_square_recess_bottom_clean.png`
 - `keycap_1u_r1_sample_exact_square_recess_side.png`

@@ -14,6 +14,7 @@ OUT_STL = MODELS / "keycap_1u_r1_sample_exact_square_recess.stl"
 OUT_DOC = DOCS / "README_keycap_1u_r1_sample_exact_square_recess.md"
 OUT_BOTTOM = ROOT / "drawings" / "keycap_1u_r1_sample_exact_square_recess_bottom.png"
 OUT_SIDE = ROOT / "drawings" / "keycap_1u_r1_sample_exact_square_recess_side.png"
+OUT_BOTTOM_CLEAN = ROOT / "drawings" / "keycap_1u_r1_sample_exact_square_recess_bottom_clean.png"
 
 
 SQUARE_HALF = 2.80
@@ -77,10 +78,19 @@ def centroid(tri):
 
 
 def tri_in_stem_region(tri):
-    cx, cy, cz = centroid(tri)
-    if cy < -0.05 or cy > RECESS_TOP_Y + 0.25:
+    # Remove any triangle that occupies the square cavity volume or touches its
+    # replacement boundary. This is more aggressive than centroid-only removal
+    # and prevents leftover internal geometry from surviving inside the recess.
+    xs = [v[0] for v in tri]
+    ys = [v[1] for v in tri]
+    zs = [v[2] for v in tri]
+    if max(ys) < BOTTOM_Y - 0.05 or min(ys) > RECESS_TOP_Y + 0.25:
         return False
-    return abs(cx) <= SQUARE_HALF + 0.05 and abs(cz) <= SQUARE_HALF + 0.05
+    if max(xs) < -SQUARE_HALF - 0.05 or min(xs) > SQUARE_HALF + 0.05:
+        return False
+    if max(zs) < -SQUARE_HALF - 0.05 or min(zs) > SQUARE_HALF + 0.05:
+        return False
+    return True
 
 
 def add_quad(tris, p0, p1, p2, p3, attr=0):
@@ -105,7 +115,7 @@ def build_square_recess(attr=0):
     return tris
 
 
-def render_projection(triangles, axes, out_path: Path, size=(1200, 1200), margin=40):
+def render_projection(triangles, axes, out_path: Path, size=(1200, 1200), margin=40, outline=True):
     ax0, ax1, depth_axis = axes
     pts = [v for _, tri, _ in triangles for v in tri]
     min0 = min(v[ax0] for v in pts)
@@ -132,7 +142,7 @@ def render_projection(triangles, axes, out_path: Path, size=(1200, 1200), margin
         poly = [proj(v) for v in tri]
         n = tri_normal(*tri)
         shade = int(170 + 70 * abs(n[depth_axis]))
-        draw.polygon(poly, fill=(shade, shade, shade), outline=(70, 70, 70))
+        draw.polygon(poly, fill=(shade, shade, shade), outline=(70, 70, 70) if outline else None)
     img.save(out_path)
 
 
@@ -150,6 +160,7 @@ def main():
 
     render_projection(patched, axes=(0, 2, 1), out_path=OUT_BOTTOM)
     render_projection(patched, axes=(0, 1, 2), out_path=OUT_SIDE)
+    render_projection(patched, axes=(0, 2, 1), out_path=OUT_BOTTOM_CLEAN, outline=False)
 
     OUT_DOC.write_text(
         "# Keycap 1u R1 from sample - square recess bottom\n\n"
@@ -165,6 +176,7 @@ def main():
         "Output files:\n"
         f"- `{OUT_STL.name}`\n"
         f"- `{OUT_BOTTOM.name}`\n"
+        f"- `{OUT_BOTTOM_CLEAN.name}`\n"
         f"- `{OUT_SIDE.name}`\n",
         encoding="utf-8",
     )
