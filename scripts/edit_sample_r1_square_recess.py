@@ -10,16 +10,17 @@ MODELS = ROOT / "models"
 DOCS = ROOT / "docs"
 
 SOURCE = Path(r"C:\Users\ADMIN\Downloads\1x1 R1.stl")
-OUT_STL = MODELS / "keycap_1u_r1_sample_exact_square_recess.stl"
-OUT_DOC = DOCS / "README_keycap_1u_r1_sample_exact_square_recess.md"
-OUT_BOTTOM = ROOT / "drawings" / "keycap_1u_r1_sample_exact_square_recess_bottom.png"
-OUT_SIDE = ROOT / "drawings" / "keycap_1u_r1_sample_exact_square_recess_side.png"
-OUT_BOTTOM_CLEAN = ROOT / "drawings" / "keycap_1u_r1_sample_exact_square_recess_bottom_clean.png"
+OUT_STL = MODELS / "keycap_1u_r1_sample_exact_square_recess_v2.stl"
+OUT_DOC = DOCS / "README_keycap_1u_r1_sample_exact_square_recess_v2.md"
+OUT_BOTTOM = ROOT / "drawings" / "keycap_1u_r1_sample_exact_square_recess_v2_bottom.png"
+OUT_SIDE = ROOT / "drawings" / "keycap_1u_r1_sample_exact_square_recess_v2_side.png"
+OUT_BOTTOM_CLEAN = ROOT / "drawings" / "keycap_1u_r1_sample_exact_square_recess_v2_bottom_clean.png"
 
 
 SQUARE_HALF = 2.80
 RECESS_TOP_Y = 3.90
 BOTTOM_Y = 0.0
+REMOVE_TOP_Y = 7.80
 
 
 def read_binary_stl(path: Path):
@@ -84,7 +85,7 @@ def tri_in_stem_region(tri):
     xs = [v[0] for v in tri]
     ys = [v[1] for v in tri]
     zs = [v[2] for v in tri]
-    if max(ys) < BOTTOM_Y - 0.05 or min(ys) > RECESS_TOP_Y + 0.25:
+    if max(ys) < BOTTOM_Y - 0.05 or min(ys) > REMOVE_TOP_Y + 0.25:
         return False
     if max(xs) < -SQUARE_HALF - 0.05 or min(xs) > SQUARE_HALF + 0.05:
         return False
