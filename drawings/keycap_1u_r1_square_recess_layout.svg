@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220mm" height="160mm" viewBox="-42 -38 84 66">
+  <style>
+    .cut { fill: none; stroke: #111; stroke-width: 0.25; }
+    .pocket { fill: rgba(30, 120, 255, 0.12); stroke: #1565c0; stroke-width: 0.25; }
+    .guide { fill: none; stroke: #888; stroke-width: 0.18; stroke-dasharray: 1 0.8; }
+    .text { font-family: Arial, sans-serif; font-size: 2.2px; fill: #111; }
+  </style>
+  <text x="-38" y="-33" class="text">1u R1 style keycap, solid body, square bottom recess only, units mm</text>
+  <rect x="-9" y="-9" width="18" height="18" class="cut"/>
+  <rect x="-3.7" y="-3.7" width="7.4" height="7.4" class="pocket"/>
+  <rect x="-6.5" y="-5.7" width="13" height="13" class="guide"/>
+  <text x="-9" y="13" class="text">Bottom 18.0 x 18.0</text>
+  <text x="-6.5" y="16" class="text">Top reference 13.0 x 13.0, shifted +0.8 in Y</text>
+  <text x="-3.7" y="19" class="text">Bottom recess 7.4 x 7.4 x 5.0 deep</text>
+  <g transform="translate(0,33)">
+    <path d="M -9 0 L -6.5 -0.5 L -6.5 -8.0 L 6.5 -9.8 L 6.5 -0.5 L 9 0 Z" class="cut"/>
+    <rect x="-3.7" y="-5" width="7.4" height="5" class="pocket"/>
+    <text x="-10" y="5" class="text">Side idea: R1 top slope, total height about 9.8</text>
+  </g>
+</svg>

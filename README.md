@@ -7,10 +7,14 @@ Project for a 1u Cherry MX compatible keycap with a CNC-machined wood body and a
 - `models/keycap_1u_cherry_mx_wood_body.stl` - wood body model for CAM.
 - `models/keycap_1u_cherry_mx_resin_insert.stl` - square resin insert/pour block with underside Cherry MX female socket.
 - `models/keycap_1u_cherry_mx_wood_resin_assembly.stl` - combined preview assembly.
+- `models/keycap_1u_r1_square_recess.stl` - R1-style 1u keycap with only a square bottom recess.
 - `drawings/keycap_1u_cherry_mx_layout.svg` - 2D dimension reference.
+- `drawings/keycap_1u_r1_square_recess_layout.svg` - 2D reference for the square-recess variant.
 - `cam/CNC_3020_PLUS_keycap_job_sheet.md` - machining notes for CNC 3020 Plus.
 - `docs/README_keycap_1u_cherry_mx_wood_resin.md` - dimensions and manufacturing notes.
+- `docs/README_keycap_1u_r1_square_recess.md` - dimensions for the square-recess variant.
 - `scripts/make_keycap_mesh.py` - regenerates the STL/SVG/docs files.
+- `scripts/make_keycap_r1_square_recess.py` - generates the R1-style square-recess variant.
 
 ## Nominal Dimensions
 
