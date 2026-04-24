@@ -8,13 +8,18 @@ Project for a 1u Cherry MX compatible keycap with a CNC-machined wood body and a
 - `models/keycap_1u_cherry_mx_resin_insert.stl` - square resin insert/pour block with underside Cherry MX female socket.
 - `models/keycap_1u_cherry_mx_wood_resin_assembly.stl` - combined preview assembly.
 - `models/keycap_1u_r1_square_recess.stl` - R1-style 1u keycap with only a square bottom recess.
+- `models/keycap_1u_r1_sample_exact_square_recess.stl` - edited directly from the user's sample STL, with the underside cross removed and replaced by a square recess.
 - `drawings/keycap_1u_cherry_mx_layout.svg` - 2D dimension reference.
 - `drawings/keycap_1u_r1_square_recess_layout.svg` - 2D reference for the square-recess variant.
+- `drawings/keycap_1u_r1_sample_exact_square_recess_bottom.png` - bottom-view render of the sample-edited variant.
+- `drawings/keycap_1u_r1_sample_exact_square_recess_side.png` - side-view render of the sample-edited variant.
 - `cam/CNC_3020_PLUS_keycap_job_sheet.md` - machining notes for CNC 3020 Plus.
 - `docs/README_keycap_1u_cherry_mx_wood_resin.md` - dimensions and manufacturing notes.
 - `docs/README_keycap_1u_r1_square_recess.md` - dimensions for the square-recess variant.
+- `docs/README_keycap_1u_r1_sample_exact_square_recess.md` - notes for the sample-edited exact variant.
 - `scripts/make_keycap_mesh.py` - regenerates the STL/SVG/docs files.
 - `scripts/make_keycap_r1_square_recess.py` - generates the R1-style square-recess variant.
+- `scripts/edit_sample_r1_square_recess.py` - edits the provided sample STL and replaces the underside cross with a square recess.
 
 ## Nominal Dimensions
 
