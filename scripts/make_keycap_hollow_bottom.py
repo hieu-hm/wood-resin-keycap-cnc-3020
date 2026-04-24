@@ -124,13 +124,13 @@ def make_keycap():
     # Hollow underside, no stem.
     inner_bottom_w = 14.8
     inner_bottom_d = 14.8
-    inner_roof_w = 10.8
-    inner_roof_d = 10.8
+    inner_roof_w = 14.0
+    inner_roof_d = 14.0
 
     outer_bottom = superellipse_loop(outer_bottom_w, outer_bottom_d, lambda _x, _y: 0.0, exponent=5.8)
     outer_top = superellipse_loop(outer_top_w, outer_top_d, top_z, y_offset=top_offset_y, exponent=5.0)
     inner_bottom = superellipse_loop(inner_bottom_w, inner_bottom_d, lambda _x, _y: 0.0, exponent=5.0)
-    inner_roof = superellipse_loop(inner_roof_w, inner_roof_d, roof_z, y_offset=top_offset_y * 0.45, exponent=4.4)
+    inner_roof = superellipse_loop(inner_roof_w, inner_roof_d, roof_z, y_offset=top_offset_y * 0.15, exponent=4.8)
 
     # Outer tapered side wall.
     add_loop_bridge(tris, outer_bottom, outer_top)
@@ -145,7 +145,7 @@ def make_keycap():
     add_loop_bridge(tris, inner_bottom, inner_roof, reverse=True)
 
     # Smooth ceiling of the hollow cavity.
-    add_filled_superellipse_surface(tris, inner_roof_w, inner_roof_d, roof_z, y_offset=top_offset_y * 0.45, exponent=4.4, reverse=True)
+    add_filled_superellipse_surface(tris, inner_roof_w, inner_roof_d, roof_z, y_offset=top_offset_y * 0.15, exponent=4.8, reverse=True)
 
     return tris
 
@@ -187,6 +187,7 @@ def write_doc():
         "- Top reference: about 13.2 x 13.2 mm\n"
         "- Bottom opening: about 14.8 x 14.8 mm\n"
         "- Wall/rim thickness at bottom: about 1.6 mm\n"
+        "- Inner wall is near-vertical so the hollow roof matches the cavity cleanly.\n"
         "- Underside is fully hollow and contains no Cherry MX stem, cross, post, bridge, or internal support.\n\n"
         "Output:\n"
         f"- `{OUT_STL.name}`\n"

@@ -8,6 +8,7 @@ Geometry:
 - Top reference: about 13.2 x 13.2 mm
 - Bottom opening: about 14.8 x 14.8 mm
 - Wall/rim thickness at bottom: about 1.6 mm
+- Inner wall is near-vertical so the hollow roof matches the cavity cleanly.
 - Underside is fully hollow and contains no Cherry MX stem, cross, post, bridge, or internal support.
 
 Output:
